@@ -4,9 +4,15 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import ElementClickInterceptedException
 from selenium.common.exceptions import StaleElementReferenceException
 from selenium.common.exceptions import NoSuchElementException
+from fake_useragent import UserAgent
+from selenium.webdriver.firefox.Options import Options
 
 def obterLinks():
-  driver = webdriver.Firefox()
+  options = Options()
+  ua = UserAgent()
+  userAgent = ua.random
+  options.add_argument(f'user-agent={userAgent}')
+  driver = webdriver.Firefox(firefox_options=options)
   url = 'https://www.tudogostoso.com.br/categorias/1000-bolos-e-tortas-doces'
   cssclass = 'recipe-card-with-hover'
   driver.get(url)
@@ -14,6 +20,7 @@ def obterLinks():
   f = open('./test.json', 'a')
   while True:
     try:
+      driver.implicitly_wait(15)
       elements = driver.find_elements(By.CLASS_NAME, cssclass)
       pagination = driver.find_element(By.CSS_SELECTOR, 'div.pagination')
       row = pagination.find_element(By.CSS_SELECTOR, 'div.row')
