@@ -1,0 +1,30 @@
+{
+  "name": "recipee-book-api",
+  "version": "0.1.0",
+  "description": "Recipee-book API",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HGBPedro/recipee-book.git"
+  },
+  "keywords": [
+    "recipes",
+    "recipe-book"
+  ],
+  "author": "Pedro H G Bonel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HGBPedro/recipee-book/issues"
+  },
+  "homepage": "https://github.com/HGBPedro/recipee-book#readme",
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.7.2"
+  }
+}
