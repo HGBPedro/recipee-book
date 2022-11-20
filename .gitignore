@@ -1,2 +1,6 @@
+#Scrapper
 /scrapper/geckodriver.log
+
+#API
 /API/node_modules
+/API/.env
