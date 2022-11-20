@@ -1,5 +1,4 @@
 import { Schema } from 'mongoose'
-import IComentarios from '../Interfaces/IComentarios'
 
 const recipesSchema = new Schema({
   nome: String,

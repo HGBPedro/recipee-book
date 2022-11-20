@@ -6,7 +6,8 @@ const usersSchema= new Schema({
   email: String,
   senha: String,
   imagem: String,
-  cozinhaProfissionalmente: Boolean
+  cozinhaProfissionalmente: Boolean,
+  salt: String
 })
 
 export default usersSchema
