@@ -4,10 +4,10 @@ const usersSchema= new Schema({
   favoritos: [String],
   nome: String,
   email: String,
-  senha: String,
+  senha: Buffer,
   imagem: String,
   cozinhaProfissionalmente: Boolean,
-  salt: String
+  salt: Buffer
 })
 
 export default usersSchema

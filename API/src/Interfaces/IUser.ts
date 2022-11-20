@@ -2,10 +2,10 @@ interface IUser {
   favoritos: Array<string>
   nome: string
   email: string
-  senha: string
+  senha: Buffer
   imagem: string
   cozinhaProfissionalmente: boolean
-  salt: string
+  salt: Buffer
 }
 
 export default IUser
