@@ -2,6 +2,7 @@ import dotenv from 'dotenv'
 import express from 'express'
 import databaseConnect from './configs/connection'
 import logger from './configs/pino-pretty'
+import userRouter from './Routers/UserRouter'
 
 dotenv.config()
 
@@ -13,6 +14,8 @@ if (!process.env.PORT) {
 const PORT = parseInt(process.env.PORT)
 
 const app = express()
+
+app.use('/', userRouter)
 
 app.listen(PORT, () => {
   databaseConnect()

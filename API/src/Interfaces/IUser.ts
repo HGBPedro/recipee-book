@@ -3,7 +3,7 @@ interface IUser {
   nome: string
   email: string
   senha: Buffer
-  imagem: string
+  imagem: Buffer
   cozinhaProfissionalmente: boolean
   salt: Buffer
 }

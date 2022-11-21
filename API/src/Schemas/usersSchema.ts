@@ -5,7 +5,7 @@ const usersSchema= new Schema({
   nome: String,
   email: String,
   senha: Buffer,
-  imagem: String,
+  imagem: Buffer,
   cozinhaProfissionalmente: Boolean,
   salt: Buffer
 })
