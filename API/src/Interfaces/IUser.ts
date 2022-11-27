@@ -1,4 +1,7 @@
+import { Types, Document } from "mongoose"
+
 interface IUser {
+  _id?: Types.ObjectId
   favoritos: Array<string>
   nome: string
   email: string

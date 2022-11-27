@@ -1,6 +1,7 @@
 import { Schema } from 'mongoose'
+import IUser from '../Interfaces/IUser'
 
-const usersSchema= new Schema({
+const usersSchema= new Schema<IUser>({
   favoritos: [String],
   nome: String,
   email: String,
