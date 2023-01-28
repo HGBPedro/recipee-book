@@ -1,0 +1,14 @@
+@import './Styles/Login.less';
+
+#root {
+  $primary-color: #15440F;
+  $secondary-color: #ADAF72;
+  $tertiary-color: #CFD427;
+  $background-color: #EFEDD8;
+
+  box-sizing: border-box;
+
+  background-color: $background-color;
+  max-width: 1280px;
+  text-align: center;
+}
