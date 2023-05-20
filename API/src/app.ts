@@ -6,6 +6,7 @@ import userRouter from './Routers/UserRouter'
 import expressSession from 'express-session'
 import MongoStore from 'connect-mongo'
 import passport from './Controllers/Auth/Middlewares/localStrategy'
+import recipeRouter from './Routers/RecipeRouter'
 
 dotenv.config()
 
@@ -17,6 +18,8 @@ if (!process.env.PORT) {
 const PORT = parseInt(process.env.PORT)
 
 const app = express()
+
+app.use(express.json())
 
 app.use(expressSession({
   secret: 'keyboard cat',
@@ -47,6 +50,7 @@ passport.deserializeUser(function(user: any, cb) {
 });
 
 app.use('/', userRouter)
+app.use('/recipes', recipeRouter)
 
 app.listen(PORT, () => {
   databaseConnect()

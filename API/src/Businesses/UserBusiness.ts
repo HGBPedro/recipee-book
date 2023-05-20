@@ -2,8 +2,6 @@ import { FilterQuery, ProjectionType, QueryOptions, Types } from 'mongoose';
 import IUser from '../Interfaces/IUser';
 import UserModel from '../Models/userModel'
 
-
-
 async function createUser (user: IUser) {
   try {
     await UserModel.create(user,  (error, user) => {
