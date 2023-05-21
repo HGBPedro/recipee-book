@@ -1,16 +1,13 @@
 import { Schema } from 'mongoose'
+import { IRecipe } from '../Interfaces/IRecipe'
 
-const recipesSchema = new Schema({
+const recipesSchema = new Schema<IRecipe>({
   nome: String,
+  descricao: String,
   tempoPreparo: String,
   qtdeFavoritos: Number,
   ingredientes: [String],
   instrucoes: [String],
-  comentarios: [{
-    autor: String,
-    data: { type: Date, default: Date.now },
-    comentario: String
-  }]
 })
 
 export default recipesSchema
