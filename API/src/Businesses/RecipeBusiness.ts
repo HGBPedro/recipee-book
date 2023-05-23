@@ -12,7 +12,7 @@ async function fetchRecipes(filter: FilterQuery<IRecipe>) {
     if (tempoPreparo) queryFilter.tempoPreparo = tempoPreparo
     if (onlyName) projection.nome = 1
     
-    return RecipeModel.find(queryFilter)
+    return RecipeModel.find(queryFilter, projection)
   } catch (err) {
     return err
   }

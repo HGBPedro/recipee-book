@@ -7,6 +7,7 @@ import expressSession from 'express-session'
 import MongoStore from 'connect-mongo'
 import passport from './Controllers/Auth/Middlewares/localStrategy'
 import recipeRouter from './Routers/RecipeRouter'
+import cors from 'cors'
 
 dotenv.config()
 
@@ -19,6 +20,7 @@ const PORT = parseInt(process.env.PORT)
 
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 
 app.use(expressSession({
