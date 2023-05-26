@@ -43,9 +43,10 @@
   font-family: var(--font-playfair);
   font-size: 35px;
   font-weight: 400;
+  text-align: right;
 }
 
-.inputContainer {
+.inputContainer, .recipeLink, .inputOpenOptions {
   align-items: center;
   background: rgba(173, 175, 114, 0.25);
   border: solid 3px var(--primary-color);
@@ -55,12 +56,17 @@
   width: 25.3125rem;
 }
 
+.inputOpenOptions {
+  border-radius: 20px 20px 0 0;
+  transition: all 0.25s;
+}
+
 .input {
   background: transparent;
   border: none;
   color: var(--primary-color);
-  font-family: var(--font-playfair);
-  font-size: 35px;
+  font-family: var(--font-raleway);
+  font-size: 22px;
   font-weight: 400;
   margin: 1.25rem 0 1.25rem 1.25rem;
   width: 100%;
@@ -74,4 +80,54 @@
   cursor: pointer;
   margin: 1.25rem;
   width: 2.5rem;
+}
+
+@keyframes opAnimation {
+  from {
+    display: none;
+    opacity: 0;
+  }
+
+  to {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.recipeLink {
+  border-top: 0;
+  border-radius: 0;
+  color: var(--primary-color);
+  font-family: var(--font-raleway);
+  font-size: 22px;
+  padding: 1.25rem;
+  text-decoration: none;
+  animation: opAnimation 0.25s ease-in-out forwards;
+}
+
+.recipeLink:last-child {
+  border-radius: 0 0 20px 20px;
+}
+
+.recipeLink:hover {
+  opacity: 75%;
+}
+
+.searchContainer {
+  transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingIcon {
+  animation: rotation .4s infinite linear;
+  margin: 1.25rem;
+  width: 1.2rem;
 }
