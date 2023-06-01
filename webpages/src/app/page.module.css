@@ -127,7 +127,7 @@
 }
 
 .loadingIcon {
-  animation: rotation .4s infinite linear;
+  animation: rotation .7s infinite linear;
   margin: 1.25rem;
   width: 1.2rem;
 }
