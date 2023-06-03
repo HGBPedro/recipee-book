@@ -20,6 +20,7 @@ const PORT = parseInt(process.env.PORT)
 const app = express()
 
 app.use(express.json())
+app.use(express.static('public'))
 
 app.use(expressSession({
   secret: 'keyboard cat',
