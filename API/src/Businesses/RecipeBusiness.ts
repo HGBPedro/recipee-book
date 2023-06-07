@@ -32,8 +32,16 @@ async function createRecipe(recipe: IRecipe) {
       return recipe
     })
   } catch (err) {
-    return err
+    throw err
   }
 }
 
-export default { fetchRecipes, createRecipe }
+async function wipeDatabase () {
+  try {
+    await RecipeModel.deleteMany({})
+  } catch (err) {
+    throw err
+  }
+}
+
+export default { fetchRecipes, createRecipe, wipeDatabase }
