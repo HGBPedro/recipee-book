@@ -58,7 +58,7 @@ export default function Home() {
             <div className={optionsList.length === 0 ? styles.inputContainer : styles.inputOpenOptions}>
               <input id='#searchInput' type='text' className={styles.input} onChange={handleRecipeSearch}/>
               {isLoading ? (
-                <Image src={loadingOutlined} className={styles.loadingIcon} alt='An arrow icon used to go to the searched recipe'/>
+                <Image src={loadingOutlined} className={styles.loadingIcon} alt='A spinning loading icon'/>
               ) : (
                 <Image src={searchArrow} className={styles.inputIcon} alt='An arrow icon used to go to the searched recipe'/>
               )}
