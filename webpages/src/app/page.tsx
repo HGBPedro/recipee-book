@@ -3,12 +3,12 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './page.module.css'
-import homeImage from '../assets/home-image.png'
-import searchArrow from '../assets/search-arrow.svg'
-import loadingOutlined from '../assets/LoadingOutlined.svg'
-import recipeApi from '../consumer/consumer'
+import homeImage from '@/assets/home-image.png'
+import searchArrow from '@/assets/search-arrow.svg'
+import loadingOutlined from '@/assets/LoadingOutlined.svg'
+import recipeApi from '@/consumer/consumer'
 import { useDebounce } from './hooks'
-import { IRecipe, IOptions } from '../interfaces/Interfaces'
+import { IRecipe, IOptions } from '@/interfaces/Interfaces'
 
 export default function Home() {
   const debounce = useDebounce((text: string) => searchForRecipesByName(text), 3000)

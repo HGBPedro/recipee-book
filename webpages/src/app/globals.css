@@ -34,3 +34,16 @@ body {
     color-scheme: dark;
   }
 }
+
+p{
+  font-family: var(--font-raleway);
+}
+
+.navbar {
+  padding: 1rem 1.5rem;
+  height: 70px;
+}
+
+.navbar:nth-child() {
+  cursor: pointer;
+}

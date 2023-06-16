@@ -1,4 +1,4 @@
-import { FilterQuery, PipelineStage, ProjectionType } from 'mongoose'
+import mongoose, { FilterQuery, PipelineStage, ProjectionType } from 'mongoose'
 import { IRecipe } from '../Interfaces/IRecipe'
 import RecipeModel from '../Models/recipeModel'
 
@@ -9,7 +9,7 @@ async function fetchRecipes(filter: FilterQuery<IRecipe>) {
     const { nome, _id, tempoPreparo, onlyName, limit = 10 } = filter
     const queryFilter: FilterQuery<IRecipe> = {}
     const projection: ProjectionType<IRecipe> = {}
-    if (_id) queryFilter._id = _id
+    if (_id) queryFilter._id = new mongoose.Types.ObjectId(_id)
     if (nome) queryFilter.nome = new RegExp(nome, 'i')
     if (tempoPreparo) queryFilter.tempoPreparo = tempoPreparo
     if (onlyName) projection.nome = 1
