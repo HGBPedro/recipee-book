@@ -52,6 +52,18 @@ function Recipe() {
           <p className={styles.recipePrepTimeText}>{calcRecipePrepTime(recipe.tempoPreparo)}</p>
         </div>
         {recipe.descricao && <p>{recipe.descricao}</p>}
+        <div className={styles.recipeInfoContainer}>
+          <section className={styles.recipeIngredients}>
+            <h2 className={styles.sectionTitle}>Ingredients</h2>
+            <ul>
+              {recipe.ingredientes.map(item => <li>{item}</li>)}
+            </ul>
+          </section>
+          <section className={styles.recipePreparation}>
+            <h2 className={styles.sectionTitle}>Preparation</h2>
+            {recipe.instrucoes.map(item => <p>{item}</p>)}
+          </section>
+        </div>
       </main>
     </>
   )
